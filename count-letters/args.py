@@ -1,0 +1,1 @@
+text = input("Introduce cadena de texto: ")
