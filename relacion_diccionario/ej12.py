@@ -75,4 +75,30 @@ while True:
             print("Cliente no tiene pedidos")
 
     elif opc== 3:
+        total_gastado = 0
+
+        nombre_cliente = input("Introduce el nombre del cliente: ").title()  
+        
+        if nombre_cliente in compras:
+            lista_pedidos = compras[nombre_cliente]
+
+            for pedido in lista_pedidos:
+                total_gastado += pedido["cantidad"] * pedido["precio_unitario"]  
+            
+            print(f'El total gastado por {nombre_cliente} es {total_gastado:.2f}€')
+        else: 
+            print((f'{nombre_cliente} no ha realizado ninguna compra'))
+
+    elif opc ==4:
         pass
+
+        
+
+
+
+    elif opc == 0:
+        print("Saliendo del Programa")
+        break
+
+    else:
+        print("La opcion elegida no es correcta. Introduce otra distinta")

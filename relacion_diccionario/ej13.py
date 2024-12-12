@@ -28,15 +28,47 @@ while True:
     print()
 
     opc = int(input("Selecciona una opcion: "))
+    print()
 
     if opc == 1:
         for i,j in pedidos.items():
-            print(f'{i}: {j}')
+            print(f'El Pedido: {i}')
+            print(f'\t- Cliente: {j["cliente"]["nombre"]}')
+            print(f'\t- Estado: {j["estado"]}')
+            print()
+        input()
 
 
     
     elif opc == 2:
         ped = input("Introduce la clave del pedido que quieres cambiar el estado: ")
+
         if ped in pedidos:
+            dicc = pedidos[ped]
             est = input("A que estado quieres ponerle(pendiente,enviado,entregado): ")
+            dicc["estado"] = est
+            pedidos[ped] = dicc
             
+        else: 
+            print("Pedido no existe")
+
+
+
+    elif opc == 3:
+        ped = input("Introduce la clave del pedido que quieres calcular la factura")
+        if ped in pedidos:
+            dicc = pedidos[ped]
+            dicc[]
+
+
+
+            pass
+
+
+    elif opc == 4:
+        pass
+
+
+
+    elif opc == 5:
+        break
