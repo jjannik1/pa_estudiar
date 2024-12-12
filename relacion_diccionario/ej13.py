@@ -55,18 +55,35 @@ while True:
 
 
     elif opc == 3:
-        ped = input("Introduce la clave del pedido que quieres calcular la factura")
+        ped = input("Introduce la clave del pedido que quieres calcular la factura: ")
         if ped in pedidos:
             dicc = pedidos[ped]
-            dicc[]
+            total = 0
+            for producto in dicc["productos"]:
+                total += producto["cantidad"] * producto["precio_unitario"]
 
+            print(f'El precio total del pedido {ped} es {total:.2f}')
 
-
-            pass
+        else:
+            print("Producto no existe")
 
 
     elif opc == 4:
-        pass
+        cod = input("Introduce su codigo de pedido(PED###): ")
+        if cod in pedidos:
+            print("Ese codigo de pedido ya existe.")
+        else:
+            cli = input("Introduce su nombre: ")
+            corr = input("Introduce su correo: ")
+
+
+            prod = input("Introduce el producto que quieres comprar: ")
+            cant = int(input("introduce la cantidad que quieres de ese producto: "))
+            precio = float(input("Introduce el precio del producto"))
+
+            pedidos[cod] = {"cliente": {"nombre": cli, "correo": corr},"productos":[ {"producto": prod, "cantidad":cant, "precio_unitario":precio },],"estado":"pendiente"}
+
+        
 
 
 
